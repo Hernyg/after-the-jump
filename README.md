@@ -8,7 +8,7 @@
 
 | Combat Simulation | Power Restoration |
 | --- | --- |
-| ![A played combat round with the Laser move visible](docs/screenshots/rock-paper-scissors-in-action.jpg) | ![The ship terminal with two fuel tiles selected](docs/screenshots/power-restore-in-action.jpg) |
+| <img src="docs/screenshots/rock-paper-scissors-in-action.jpg" width="390" alt="A played combat round with the Laser move visible"> | <img src="docs/screenshots/power-restore-in-action.jpg" width="390" alt="The ship terminal with two fuel tiles selected"> |
 | Face off against the ship's computer using Asteroid, Shield, and Laser. | Find the right components to restore power through the ship's terminal. |
 
 ## Saved adventures
