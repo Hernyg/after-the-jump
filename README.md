@@ -22,8 +22,8 @@ Keep up to three named saves and resume your story from the game menu. Progress 
 Install [Node.js 22](https://nodejs.org/) and the [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0), then run:
 
 ```sh
-git clone https://github.com/Hernyg/DotNET-project.git
-cd DotNET-project
+git clone https://github.com/Hernyg/after-the-jump.git
+cd after-the-jump
 npm ci
 npm start
 ```
