@@ -15,7 +15,7 @@
 
 Keep up to three named saves and resume your story from the game menu. Progress saves automatically.
 
-![The Continue Adventure menu with a named save](docs/screenshots/saved-adventure.jpg)
+![The Continue Adventure menu with a named save](docs/screenshots/saved-adventure-jack.jpg)
 
 ## Play locally
 
