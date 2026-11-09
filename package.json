@@ -22,13 +22,14 @@
     "concurrently": "^8.2.2",
     "cross-env": "^7.0.3",
     "postcss": "^8.5.6",
-    "tailwindcss": "^3.4.18"
+    "tailwindcss": "^3.4.18",
+    "typescript": "4.9.5"
   },
   "scripts": {
-    "start": "cd frontend && cross-env DANGEROUSLY_DISABLE_HOST_CHECK=true react-scripts start",
-    "start:frontend": "npm run start",
-    "start:backend": "dotnet run --project backend/backend.csproj",
-    "start:dev": "npx concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "start": "concurrently --kill-others --names api,web \"npm run start:backend\" \"npm run start:frontend\"",
+    "start:frontend": "cd frontend && cross-env HOST=localhost DANGEROUSLY_DISABLE_HOST_CHECK=true react-scripts start",
+    "start:backend": "dotnet run --project backend/backend.csproj --launch-profile http",
+    "start:dev": "npm start",
     "build": "cd frontend && react-scripts build",
     "test": "cd frontend && react-scripts test",
     "eject": "cd frontend && react-scripts eject"
@@ -50,5 +51,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "engines": {
+    "node": "22.x"
   }
 }

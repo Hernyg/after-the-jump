@@ -42,33 +42,24 @@ public static class AuthDbSeeder
             }
         }
 
-        // Seed admin user
-        var checkAdminUser = await userManager.FindByNameAsync("admin");
-        if (checkAdminUser == null)
+        // Register through the same service as a player so both databases get a user record.
+        if (await userManager.FindByNameAsync("admin") is null)
         {
-            var user = new AuthUser { UserName = "admin" };
-
-            var createAdminUser = await userManager.CreateAsync(
-                user,
-                "Admin123!"
-            );
-
-            if (createAdminUser.Succeeded)
+            await userService.RegisterAccount(new RegisterUserDto
             {
-                await userManager.AddToRoleAsync(user, "admin");
-                await userService.RegisterAccount(
-                    new RegisterUserDto
-                    {
-                        Username = "admin",
-                        Password = "Admin123!"
-                    }
-                );
-                logger.Information("Created the default admin user");
-            }
-            else
+                Username = "admin",
+                Password = "Admin123!"
+            });
+
+            var admin = await userManager.FindByNameAsync("admin")
+                ?? throw new InvalidOperationException("Default admin account was not created.");
+            var result = await userManager.AddToRoleAsync(admin, "admin");
+            if (!result.Succeeded)
             {
-                logger.Error("Failed to create the default admin user");
+                throw new InvalidOperationException("Could not assign the default admin role.");
             }
+
+            logger.Information("Created the default admin user");
         }
     }
 }

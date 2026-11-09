@@ -1,5 +1,8 @@
 import React, { useState, useEffect} from "react";
 import {HoloButton} from "./UI/HoloButton";
+import asteroidIcon from "../../../shared/assets/icons/asteroid-2-svgrepo-com.svg";
+import shieldIcon from "../../../shared/assets/icons/paper-svgrepo-com.svg";
+import laserIcon from "../../../shared/assets/icons/laser.svg";
 
 
 /*
@@ -28,9 +31,9 @@ const labels = {
 // SVGS that displays the choices that player and machine has picked.
 // svgs are used from https://www.svgrepo.com/ 20.11.2025
 const choiceSVGS = {
-    rock: "/assets/icons/asteroid-2-svgrepo-com.svg",
-    paper: "/assets/icons/paper-svgrepo-com.svg",
-    scissors: "/assets/icons/scissors-svgrepo-com.svg",
+    rock: asteroidIcon,
+    paper: shieldIcon,
+    scissors: laserIcon,
 }
 
 
@@ -82,9 +85,8 @@ const DisplayChoice = ({ choice, side, winner, rolling }) => {
                 {choice ? (
                     <img
                         src={choiceSVGS[choice]}
-                        alt={choice}
-                        className={`w-16 h-16 md:w-20 md:h-20 drop-shadow-lg transition-transform duration-300 ${isWinner ? 'scale-110' : 'scale-100'}`}
-                        style={{ filter: isWinner ? 'brightness(1.2)' : 'none' }}
+                        alt={labels[choice]}
+                        className={`w-16 h-16 md:w-20 md:h-20 invert drop-shadow-lg transition-transform duration-300 ${isWinner ? 'scale-110' : 'scale-100'}`}
                     />
                 ) : (
                     <div className="text-4xl font-mono text-slate-700 animate-pulse">?</div>
@@ -377,7 +379,7 @@ const RockPaperScissors = ({ onComplete, onWin, onLose }) => {
                                     >
                                         <img
                                             src={choiceSVGS[choice]}
-                                            alt={choice}
+                                            alt={labels[choice]}
                                             className="w-6 h-6 invert opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all"
                                         />
                                         <span className="hidden md:inline text-sm">{labels[choice]}</span>
