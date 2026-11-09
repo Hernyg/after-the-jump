@@ -6,10 +6,10 @@
 
 ## Minigames
 
-| Combat Simulation | Power Restoration |
-| --- | --- |
-| <img src="docs/screenshots/rock-paper-scissors-in-action.jpg" width="390" alt="A played combat round with the Laser move visible"> | <img src="docs/screenshots/power-restore-in-action.jpg" width="390" alt="The ship terminal with two fuel tiles selected"> |
-| Face off against the ship's computer using Asteroid, Shield, and Laser. | Find the right components to restore power through the ship's terminal. |
+![Combat Simulation and Power Restoration shown side by side](docs/screenshots/minigames-side-by-side.jpg)
+
+- **Combat Simulation (left).** Face off against the ship's computer using Asteroid, Shield, and Laser.
+- **Power Restoration (right).** Find the right components to restore power through the ship's terminal.
 
 ## Saved adventures
 
